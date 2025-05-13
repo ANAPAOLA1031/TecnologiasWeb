@@ -1,1 +1,13 @@
+(()=>{
+    const nombre = ['Hugo', 'Paco', 'Luis', 'Pedro', 'Hector'];
+    const edad = [35, 50, 40, 18, 30];
+    
+    const personas = nombre.map((n, i) => ({ nombre: n, edad: edad[i] }));
+
+    const menor = personas.reduce ((min, p) => (p.edad < min.edad ? p : min));
+    const mayor = personas.reduce ((max, p) => (p.edad > max.edad ? p : max));
+    
+    console.log(menor.nombre + ' es el menor con ' + menor.edad + ' años.');
+    console.log(mayor.nombre + ' es el mayor con ' + mayor.edad + ' años.');
+})()
 

@@ -1,1 +1,184 @@
+(()=>{
 
+ class Manager {
+     constructor(
+           public Name:string,
+            public ID:number,
+            public PhoneNo:number,
+            public Locacion:string
+        ){
+          this.Name=Name;
+          this.ID=ID;
+          this.PhoneNo=PhoneNo;
+          this.Locacion= Locacion;  
+        }
+    }
+  const Name: Manager = new Manager(
+    `Daniela`,
+    1031,
+    41235895,
+    `Arbolera`);
+    console.log(Name);
+    console.log (Name.Name);
+
+ class Chef {
+     constructor(
+           public Name2:string,
+            public ID2:number,
+            public Locacion2:string
+        ){
+          this.Name2=Name2;
+          this.ID2=ID2;
+          this.Locacion2= Locacion2;  
+        }
+    }
+  const Name2: Chef = new Chef(
+    `Lola`,
+    1988,
+    `Arbolera`);
+    console.log(Name2);
+    console.log (Name2.Name2);
+
+
+     class Food {
+     constructor(
+           public Name3:string,
+            public ID3:number,
+        
+        ){
+          this.Name3=Name3;
+          this.ID3=ID3;
+        }
+    }
+  const Name3: Food = new Food (
+    `Lola`,
+    1988
+);
+    console.log(Name3);
+    console.log (Name3.Name3);
+
+    class Inventario {
+     constructor(
+           public Typo:string,
+            public ID3:number,
+        
+        ){
+          this.Typo=Typo;
+          this.ID3=ID3;
+        }
+    }
+  const Typo: Inventario = new Inventario (
+    `Tecnologico`,
+    1824
+);
+    console.log(Typo);
+    console.log (Typo.Typo);
+
+class Guest {
+     constructor(
+           public Name4:string,
+            public ID4:number,
+             public Phone2:number,
+              public Address:String,
+               public Room:number,
+        
+        ){
+          this.Name4=Name4;
+          this.ID4=ID4;
+             this.Phone2=Phone2;
+                this.Address=Address;
+                   this.Room=Room;
+        }
+    }
+  const Name4: Guest = new Guest (
+    `Alexa`,
+    2020,
+    4111902394,
+    `Toranja `,
+    2
+);
+    console.log(Name4);
+    console.log (Name4.Name4);
+
+class Housekeeping {
+     constructor(
+           public Name5:string,
+            public ID4:number,
+            public Locacion2:string
+        
+        ){
+          this.Name5=Name5;
+          this.ID4=ID4;
+            this.Locacion2=Locacion2;
+        }
+    }
+  const Name5: Housekeeping = new Housekeeping (
+    `Sebastian`,
+    3421,
+    `Zaragoza`
+);
+    console.log(Name5);
+    console.log (Name5.Name5);
+
+class Recepcion {
+     constructor(
+           public Name6:string,
+            public ID5:number,
+            public Phone3:number,
+            public Locacion3:string
+        
+        ){
+          this.Name6=Name6;
+          this.ID5=ID5;
+          this.Phone3=Phone3;
+        this.Locacion3=Locacion3;
+        }
+    }
+  const Name6: Recepcion = new Recepcion (
+    `Fernando`,
+    6775,
+    652801452,
+    `Mar azul`
+);
+    console.log(Name6);
+    console.log (Name6.Name6);
+
+    class Rooms {
+     constructor(
+        
+            public Room2:number,
+            public Locacion3:string
+        
+        ){
+         
+          this.Room2=Room2;
+        this.Locacion3=Locacion3;
+        }
+    }
+  const Room2: Rooms = new Rooms (
+    780,
+    `Mar azul`
+);
+    console.log(Room2);
+    console.log (Room2.Room2);
+
+     class Bill {
+     constructor(
+        
+            public Billn:number,
+            public GuestName:string
+        
+        ){
+         
+          this.Billn=Billn;
+        this.GuestName=GuestName;
+        }
+    }
+  const Billn: Bill = new Bill (
+    346,
+    `Hari`
+);
+    console.log(Billn);
+    console.log (Billn.Billn);
+
+})()

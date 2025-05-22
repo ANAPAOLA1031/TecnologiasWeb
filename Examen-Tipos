@@ -1,77 +1,87 @@
-(()=>{
-     type coche = {
-        carroceria: string;
-        modelo: number;
-        antibalas: string[];
-        pasajero: number;
-        getName?: () => string;
-    }
-
-const batimovil = {
-  carroceria: "Negra",
-  modelo: "6x6",
-  antibalas: true,
-  pasajeros:4
-};
-
-const bumblebee = {
-  carroceria: "Amarillo con negro",
-  modelo: "4x2",
-  antibalas: true,
-  pasajeros:4,
-  disparar(){ // El metodo disparar es opcional
-    console.log("Disparando");
+(() => {
+  // Interfaz para coche
+  interface Coche {
+    carroceria: string;
+    modelo: string;
+    antibalas: boolean;
+    pasajeros: number;
+    getName?(): string;
   }
-};
- type Villanos = {
-        name: string;
-        age?: number;
-        mutante: string[];
-        getName?: () => string;
+
+  class Auto implements Coche {
+    constructor(
+      public carroceria: string,
+      public modelo: string,
+      public antibalas: boolean,
+      public pasajeros: number
+    ) {}
+  }
+
+  class Bumblebee extends Auto {
+    disparar() {
+      console.log("Disparando");
     }
+  }
 
-// Villanos debe de ser un arreglo de objetos personalizados
-const villanos = [{
-  nombre:"Lex Luthor",
-  edad: 54,
-  mutante:false
+  const batimovil = new Auto("Negra", "6x6", true, 4);
+  const bumblebee = new Bumblebee("Amarillo con negro", "4x2", true, 4);
 
-},{
-  nombre: "Erik Magnus Lehnsherr",
-  edad: 49,
-  mutante: true
+  // Interfaz para Villanos
+  interface Villano {
+    nombre: string;
+    edad?: number;
+    mutante: boolean;
+    getName?(): string;
+  }
 
-},{
-  nombre: "James Logan",
-  edad: undefined,
-  mutante: true
-}];
+  const villanos: Villano[] = [
+    {
+      nombre: "Lex Luthor",
+      edad: 54,
+      mutante: false,
+    },
+    {
+      nombre: "Erik Magnus Lehnsherr",
+      edad: 49,
+      mutante: true,
+    },
+    {
+      nombre: "James Logan",
+      edad: undefined,
+      mutante: true,
+    },
+  ];
 
- type charles = {
-        name: string;
-        powers: string;
-        estatura: number[];
-        getName?: () => string;
-    }
+  // Interfaces para Charles y Apocalipsis
+  interface Charles {
+    poder: string;
+    estatura: number;
+    getName?(): string;
+  }
 
-// Multiples tipos
-// cree dos tipos, uno para charles y otro para apocalipsis
-const charles = {
-  poder:"psiquico",
-  estatura: 1.78
-};
+  interface Apocalipsis {
+    lider: boolean;
+    miembros: string[];
+    getName?(): string;
+  }
 
-const apocalipsis = {
-  lider:true,
-  miembros: ["Magneto","Tormenta","Psylocke","Angel"]
-}
+  class ProfesorX implements Charles {
+    constructor(
+      public poder: string,
+      public estatura: number
+    ) {}
+  }
 
-// Mystique, debe poder ser cualquiera de esos dos mutantes (charles o apocalipsis)
-let mystique;
+  class VillanoApocalipsis implements Apocalipsis {
+    constructor(
+      public lider: boolean,
+      public miembros: string[]
+    ) {}
+  }
 
-mystique = charles;
-mystique = apocalipsis;
+  let mystique: Charles | Apocalipsis;
 
+  mystique = new ProfesorX("psiquico", 1.78);
+  mystique = new VillanoApocalipsis(true, ["Magneto", "Tormenta", "Psylocke", "Angel"]);
 
-})()
-
+})();

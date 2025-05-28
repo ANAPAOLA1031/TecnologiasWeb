@@ -1,3 +1,15 @@
+EJEMPLOS
+----------------UNO------------------
+export function wrapInArray<T>(value: T): T[] {
+  return [value];
+}
+console.log(wrapInArray<number>(5)); // [5]
+console.log(wrapInArray<string>('hola')); // ['hola']
 
-
+----------------DOS--------------------
+export function mergeObjects<T, U>(obj1: T, obj2: U): T & U {
+  return { ...obj1, ...obj2 };
+}
+console.log(mergeObjects({ nombre: 'Ana' }, { edad: 25 }));
+// { nombre: 'Ana', edad: 25 }
 
